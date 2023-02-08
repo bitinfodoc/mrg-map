@@ -1,4 +1,7 @@
-export const abdulinoRegion = [
+export const abdulinoRegion = {
+  polygonName: 'Абдулинский район',
+  color: '#0000ff',
+  polygon: [
     [
       [
         53.1180898,
@@ -4534,3 +4537,4 @@ export const abdulinoRegion = [
       ]
     ]
   ]
+}

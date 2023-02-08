@@ -1,4 +1,7 @@
-export const sorochRegion = [
+export const sorochRegion ={ 
+  polygonName: 'Сорочинский район',
+  color: '#0066ff',
+  polygon: [
     [
       [
         52.7722066,
@@ -2805,4 +2808,4 @@ export const sorochRegion = [
         52.7137151
       ]
     ]
-  ]
+  ]}

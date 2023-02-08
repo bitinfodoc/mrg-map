@@ -1,4 +1,7 @@
-export const krasnogvaRegion = [
+export const krasnogvaRegion = {
+  polygonName: 'Красногвардейский район',
+  color: '#0066ff',
+  polygon: [
     [
       [
         53.0643233,
@@ -5209,4 +5212,4 @@ export const krasnogvaRegion = [
         52.7208726
       ]
     ]
-  ]
+  ]}

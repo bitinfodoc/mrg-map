@@ -1,4 +1,7 @@
-export const pervomaiRegion = [
+export const pervomaiRegion = {
+  polygonName: 'Первомайский район',
+  color: '#0033cc',
+  polygon: [
     [
       [
         50.7681628,
@@ -3978,3 +3981,4 @@ export const pervomaiRegion = [
       ]
     ]
   ]
+}

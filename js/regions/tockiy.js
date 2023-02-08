@@ -1,4 +1,7 @@
-export const tockiyRegion = [
+export const tockiyRegion = {
+  polygonName: 'Тоцкий район',
+  color: '#0033cc',
+  polygon: [
     [
       [
         52.0383499,
@@ -4165,4 +4168,4 @@ export const tockiyRegion = [
         52.121251
       ]
     ]
-  ]
+  ]}

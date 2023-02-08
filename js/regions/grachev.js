@@ -1,4 +1,8 @@
-export const grachevRegion = [
+export const grachevRegion = {
+  
+  polygonName: 'Грачёвский район',
+  color: '#0033cc',
+  polygon: [
     [
       [
         52.6172656,
@@ -889,4 +893,4 @@ export const grachevRegion = [
         52.8842026
       ]
     ]
-  ]
+  ]}

@@ -1,4 +1,7 @@
-export const novosergRegion = [
+export const novosergRegion = {
+  polygonName: 'Новосергиевский район',
+  color: '#0066ff',
+  polygon: [
     [
       [
         53.1326365,
@@ -7841,4 +7844,4 @@ export const novosergRegion = [
         52.053972
       ]
     ]
-  ]
+  ]}

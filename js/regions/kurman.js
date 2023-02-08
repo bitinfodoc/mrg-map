@@ -1,4 +1,7 @@
-export const kurmanRegion = [
+export const kurmanRegion = {
+  polygonName: 'Курманаевский район',
+  color: '#0033cc',
+  polygon: [
     [
       [
         51.3710804,
@@ -2342,3 +2345,4 @@ export const kurmanRegion = [
       ]
     ]
   ]
+}

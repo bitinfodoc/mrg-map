@@ -1,6 +1,7 @@
-import { coordReverse, borderStyle } from './../utils.js';
- 
-export const perevolRegion = [
+export const perevolotskRegion = {
+  polygonName: 'Переволоцкий район',
+  color: '#0066cc',
+  polygon: [
         [
           [
             53.9142311,
@@ -1872,6 +1873,7 @@ export const perevolRegion = [
           ]
         ]
       ]
+    }
 
 
 

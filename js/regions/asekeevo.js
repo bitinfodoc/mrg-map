@@ -1,6 +1,10 @@
+import area from './../areas/bugurus.js';
+
 export const asekeevoRegion = {
     polygonName: 'Асекеевский район',
-    color: '#000099',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
     polygon: [
         [
           [

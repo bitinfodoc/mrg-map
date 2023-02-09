@@ -1,5 +1,6 @@
 export const oktyabrRegion = {
     polygonName: 'Октябрьский район',
+    
     color: '#0066cc',
     polygon: [
         [

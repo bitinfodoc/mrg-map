@@ -1,5 +1,6 @@
 export const solIleckRegion = {
     polygonName: 'Соль-илецкий район',
+    
     color: '#3399ff',
     polygon:
     [

@@ -1,6 +1,7 @@
 
 export const sakmaraRegion = {
     polygonName: 'Сакмарский район',
+    
     color: '#0066cc',
     polygon: [
     [

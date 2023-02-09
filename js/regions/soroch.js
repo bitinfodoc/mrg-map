@@ -1,6 +1,10 @@
+import area from './../areas/sorochinsk.js';
+
 export const sorochRegion ={ 
   polygonName: 'Сорочинский район',
-  color: '#0066ff',
+  area,
+  color: area.areaColor,
+  areaName: area.areaName,
   polygon: [
     [
       [

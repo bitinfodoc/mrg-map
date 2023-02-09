@@ -1,5 +1,6 @@
 export const sharlikRegion = {
     polygonName: 'Шарлыкский район',
+    
     color: '#0066cc',
     polygon: [
         [

@@ -1,6 +1,10 @@
+import area from './../areas/buzuluk.js';
+
 export const pervomaiRegion = {
   polygonName: 'Первомайский район',
-  color: '#0033cc',
+  area,
+  color: area.areaColor,
+  areaName: area.areaName,
   polygon: [
     [
       [

@@ -1,5 +1,6 @@
 export const aleksandRegion = {
     polygonName: 'Александровский район',
+    
     color: '#0066cc',
     polygon: [
         [

@@ -1,5 +1,6 @@
 export const ilekRegion ={ 
   polygonName: 'Илекский район',
+  
   color: '#0066cc',
   polygon: [
     [

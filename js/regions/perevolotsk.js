@@ -1,5 +1,6 @@
 export const perevolotskRegion = {
   polygonName: 'Переволоцкий район',
+  
   color: '#0066cc',
   polygon: [
         [

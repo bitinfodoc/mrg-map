@@ -1,10 +1,14 @@
 import area from './../areas/bugurus.js';
+// import { asekeevoPoint } from './../points/asekeevo.js'
+import { buguruslanPoint, asekeevoPoint } from './../points/bugurus.js'
 
 export const asekeevoRegion = {
     polygonName: 'Асекеевский район',
     area,
     color: area.areaColor,
     areaName: area.areaName,
+    mainAreaPoint: buguruslanPoint,
+    regionPoint: asekeevoPoint,
     polygon: [
         [
           [

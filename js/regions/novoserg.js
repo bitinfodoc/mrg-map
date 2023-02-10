@@ -1,10 +1,13 @@
 import area from './../areas/sorochinsk.js';
+import { sorochinskPoint, novosergPoint } from './../points/sorochinsk.js';
 
 export const novosergRegion = {
   polygonName: 'Новосергиевский район',
   area,
   color: area.areaColor,
   areaName: area.areaName,
+  mainAreaPoint: sorochinskPoint,
+  regionPoint: novosergPoint,
   polygon: [
     [
       [

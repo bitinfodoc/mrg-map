@@ -1,10 +1,13 @@
 import area from './../areas/buzuluk.js';
+import { buzulukPoint, tockiyPoint } from './../points/buzuluk.js';
 
 export const tockiyRegion = {
   polygonName: 'Тоцкий район',
   area,
   color: area.areaColor,
   areaName: area.areaName,
+  mainAreaPoint: buzulukPoint,
+  regionPoint: tockiyPoint,
   polygon: [
     [
       [

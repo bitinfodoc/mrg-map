@@ -1,6 +1,13 @@
+import area from './../areas/orenburg.js';
+import { proletarskayaPoint } from './../points/orenburg.js'
+
 export const orenburgRegion = {
     polygonName: 'Городской округ Оренбург',
-    color: '#000099',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: proletarskayaPoint,
+    regionPoint: proletarskayaPoint,
     polygon: [
         [
             [

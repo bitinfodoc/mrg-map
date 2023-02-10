@@ -1,10 +1,13 @@
 import area from './../areas/buzuluk.js';
+import { buzulukPoint, kurmanPoint } from './../points/buzuluk.js';
 
 export const kurmanRegion = {
   polygonName: 'Курманаевский район',
   area,
   color: area.areaColor,
   areaName: area.areaName,
+  mainAreaPoint: buzulukPoint,
+  regionPoint: kurmanPoint,
   polygon: [
     [
       [

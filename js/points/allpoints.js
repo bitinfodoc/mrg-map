@@ -2,6 +2,7 @@ import { buguruslanPoint, asekeevoPoint, mordvoDobrinoPoint, severnoePoint } fro
 import { buzulukPoint, grachevPoint, kurmanPoint, pervomaiPoint, tockiyPoint } from './buzuluk.js';
 import { abdulinoPoint, ponomarPoint, matveevPoint } from './abdulino.js';
 import { sorochinskPoint, tashlaPoint, pleshanovoPoint, novosergPoint} from './sorochinsk.js';
+import { proletarskayaPoint, samolyotnayaPoint} from './orenburg.js';
 
 
 export default [ 
@@ -9,5 +10,5 @@ export default [
     buzulukPoint, grachevPoint, kurmanPoint, pervomaiPoint, tockiyPoint,
     abdulinoPoint, ponomarPoint, matveevPoint,
     sorochinskPoint, tashlaPoint, pleshanovoPoint, novosergPoint,
-    
+    proletarskayaPoint, samolyotnayaPoint
 ];

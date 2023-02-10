@@ -1,10 +1,13 @@
 import area from './../areas/bugurus.js';
+import { buguruslanPoint, severnoePoint } from './../points/bugurus.js'
 
 export const severniyRegion = {
     polygonName: 'Северный район',
     area,
     color: area.areaColor,
     areaName: area.areaName,
+    mainAreaPoint: buguruslanPoint,
+    regionPoint: severnoePoint,
     polygon: [
         [
           [

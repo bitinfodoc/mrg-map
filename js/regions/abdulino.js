@@ -1,10 +1,13 @@
 import area from './../areas/abdulino.js';
+import { abdulinoPoint } from './../points/abdulino.js'
 
 export const abdulinoRegion = {
   polygonName: 'Абдулинский район',
   area,
   color: area.areaColor,
   areaName: area.areaName,
+  mainAreaPoint: '',
+  regionPoint: abdulinoPoint,
   polygon: [
     [
       [

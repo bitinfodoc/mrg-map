@@ -1,11 +1,14 @@
 
 import area from './../areas/abdulino.js';
+import { abdulinoPoint, ponomarPoint } from './../points/abdulino.js'
 
 export const ponomarRegion = {
     polygonName: 'Пономарёвский район',
     area,
     color: area.areaColor,
     areaName: area.areaName,
+    mainAreaPoint: abdulinoPoint,
+    regionPoint: ponomarPoint,
     polygon: [
         [
           [

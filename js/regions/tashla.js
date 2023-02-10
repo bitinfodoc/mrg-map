@@ -1,10 +1,13 @@
 import area from './../areas/sorochinsk.js';
+import { sorochinskPoint, tashlaPoint } from './../points/sorochinsk.js';
 
 export const tashlaRegion = {
     polygonName: 'Ташлинский район',
     area,
     color: area.areaColor,
     areaName: area.areaName,
+    mainAreaPoint: sorochinskPoint,
+    regionPoint: tashlaPoint,
     polygon:[
         [
         [

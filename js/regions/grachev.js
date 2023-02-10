@@ -1,4 +1,5 @@
 import area from './../areas/buzuluk.js';
+import { buzulukPoint, grachevPoint } from './../points/buzuluk.js';
 
 export const grachevRegion = {
   
@@ -6,6 +7,8 @@ export const grachevRegion = {
   area,
   color: area.areaColor,
   areaName: area.areaName,
+  mainAreaPoint: buzulukPoint,
+  regionPoint: grachevPoint,
   polygon: [
     [
       [

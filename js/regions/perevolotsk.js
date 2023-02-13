@@ -1,7 +1,13 @@
+import area from './../areas/oren.js';
+import {perevolotskPoint} from './../points/oren.js';
+
 export const perevolotskRegion = {
   polygonName: 'Переволоцкий район',
-  
-  color: '#0066cc',
+  area,
+  color: area.areaColor,
+  areaName: area.areaName,
+  mainAreaPoint: '',
+  regionPoint: perevolotskPoint,
   polygon: [
         [
           [

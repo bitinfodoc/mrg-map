@@ -1,7 +1,13 @@
+import area from './../areas/oren.js';
+import {ilekPoint} from './../points/oren.js';
+
 export const ilekRegion ={ 
   polygonName: 'Илекский район',
-  
-  color: '#0066cc',
+  area,
+  color: area.areaColor,
+  areaName: area.areaName,
+  mainAreaPoint: '',
+  regionPoint: ilekPoint,
   polygon: [
     [
       [

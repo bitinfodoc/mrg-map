@@ -1,7 +1,13 @@
+import area from './../areas/oren.js';
+import {aleksandPoint} from './../points/oren.js';
+
 export const aleksandRegion = {
     polygonName: 'Александровский район',
-    
-    color: '#0066cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: aleksandPoint,
     polygon: [
         [
           [

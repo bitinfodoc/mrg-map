@@ -1,6 +1,13 @@
+import area from './../areas/solileck.js';
+import { } from './../points/solileck.js';
+
 export const akbulakRegion = {
     polygonName: 'Акбулакский район',
-    color: '#3399ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: '',
     polygon: [
         [
           [

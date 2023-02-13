@@ -1,7 +1,13 @@
+import area from './../areas/oren.js';
+import {sharlikPoint} from './../points/oren.js';
+
 export const sharlikRegion = {
     polygonName: 'Шарлыкский район',
-    
-    color: '#0066cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: sharlikPoint,
     polygon: [
         [
           [

@@ -1,6 +1,13 @@
+import area from './../areas/oren.js';
+import {tulganPoint} from './../points/oren.js';
+
 export const tulganRegion = {
     polygonName: 'Тюльганский район',
-    color: '#0066cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: tulganPoint,
     polygon: [
         [
           [

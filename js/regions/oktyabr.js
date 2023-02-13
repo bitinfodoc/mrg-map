@@ -1,7 +1,13 @@
+import area from './../areas/oren.js';
+import {oktyabrPoint} from './../points/oren.js';
+
 export const oktyabrRegion = {
     polygonName: 'Октябрьский район',
-    
-    color: '#0066cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: oktyabrPoint,
     polygon: [
         [
           [

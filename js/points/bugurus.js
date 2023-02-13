@@ -2,10 +2,7 @@ import area from './../areas/bugurus.js';
 
 export const buguruslanPoint = {
     coord: [53.651798, 52.437026],
-    type: {
-        name: 'Офис обслуживания',
-        id: 'office'
-    },
+    type: 'office',
     name: 'г. Бугуруслан',
     address: 'ул. Красногвардейская, 63',
     phone: '(35352) 6-60-10',
@@ -27,10 +24,7 @@ export const buguruslanPoint = {
 
 export const asekeevoPoint = {
     coord: [53.576171, 52.804347],
-    type: {
-        name: 'Офис обслуживания',
-        id: 'office'
-    },
+    type: 'office',
     name: 'с. Асекеево',
     address: 'ул. Садовая, 9',
     phone: '(353-51) 2-80-09',
@@ -51,10 +45,7 @@ export const asekeevoPoint = {
 }
 export const mordvoDobrinoPoint = {
     coord: [54.133130, 53.022435],
-    type: {
-        name: 'Офис обслуживания',
-        id: 'office'
-    },
+    type: 'office',
     name: 'с. Мордово-Добрино',
     address: 'ул. Центральная, 21б',
     phone: '(353-54) 2-42-65',
@@ -75,10 +66,7 @@ export const mordvoDobrinoPoint = {
 }
 export const severnoePoint = {
     coord: [54.092179, 52.542209],
-    type: {
-        name: 'Офис обслуживания',
-        id: 'office'
-    },
+    type: 'office',
     name: 'с. Северное',
     address: 'ул. Советская, 24А',
     phone: '(353-54) 2-22-20',

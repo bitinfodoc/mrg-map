@@ -1,8 +1,13 @@
+import area from './../areas/oren.js';
+import {sakmaraPoint} from './../points/oren.js';
 
 export const sakmaraRegion = {
     polygonName: 'Сакмарский район',
-    
-    color: '#0066cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: sakmaraPoint,
     polygon: [
     [
       [

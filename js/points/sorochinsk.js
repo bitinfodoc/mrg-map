@@ -2,10 +2,7 @@ import area from '../areas/sorochinsk.js';
 
 export const sorochinskPoint = {
         coord: [52.436998, 53.153540],
-        type: {
-            name: 'Офис обслуживания',
-            id: 'office'
-        },
+        type: 'office',
         name: 'г. Сорочинск',
         address: 'ул. Чапаева, 64',
         phone: '(353-46) 6-00-09',
@@ -27,10 +24,7 @@ export const sorochinskPoint = {
 
 export const novosergPoint = {
         coord: [52.098623, 53.641424],
-        type: {
-            name: 'Офис обслуживания',
-            id: 'office'
-        },
+        type: 'office',
         name: 'п. Новосергиевка',
         address: 'ул. Пролетарская, 58а',
         phone: '(353-39) 2-90-99',
@@ -52,10 +46,7 @@ export const novosergPoint = {
 
 export const pleshanovoPoint = {
         coord: [52.850070, 53.485656],
-        type: {
-            name: 'Терминал обслуживания',
-            id: 'terminal'
-        },
+        type: 'terminal',
         name: 'с. Плешаново',
         address: 'ул. Мира, 6',
         // phone: '(353-45) 3-80-10',
@@ -76,14 +67,11 @@ export const pleshanovoPoint = {
     }
 
 export const tashlaPoint = {
-        coord: [51.758450, 52.737791],
-        type: {
-            name: 'Терминал обслуживания',
-            id: 'terminal'
-        },
+        coord: [51.765624, 52.746235],
+        type: 'terminal',
         name: 'с. Ташла',
-        address: 'ул. Энергетиков, 2а',
-        phone: '(353-47) 2-13-89',
+        address: 'ул. Хлебная, 4',
+        // phone: '(353-47) 2-13-89',
         work: {
             hide: false,
             monday: 'с 9:00 до 17:00',

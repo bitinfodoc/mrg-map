@@ -25,7 +25,7 @@ async function main() {
 
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                 (['<div style="margin: 0px 0;">',
-                    '<div style="float: left; margin: 0 10px;">',
+                    '<div style="float: left; margin: 0 10px; max-width: 400px;">',
                         '<b>{{properties.name}}</b><br/>',
                         '<i>Абонентский участок {{properties.areaName}}</i><br/><br/>',
                         element.regionPoint && '<b>Офис обслуживания в вашем районе</b><br/>',
@@ -133,17 +133,17 @@ async function main() {
         
             let newpoint = new ymaps.Placemark(element.coord,  {
                 name: element.name,
-                typeName: element.type.name,
+                typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема' ,
                 address: element.address,
                 phone: element.phone,
                 work: element.work,
                 areaName: element.areaName,
                 bossName: element.boss.name,
                 bossImage: element.boss.image,
-                hintContent: ([element.type.name, ' в ', element.name]).join('')
+                hintContent: ([element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема', ' в ', element.name]).join('')
             }, {
                 balloonContentLayout: BalloonContentLayout,      
-                preset: element.type.id === 'office' ? 'islands#dotIcon' : 'islands#starIcon',
+                preset: element.type === 'office' ? 'islands#homeIcon' : 'islands#personIcon',
                 // preset: element.type.id === 'office' ? 'islands#pocketIcon' : 'islands#starIcon',
                 iconColor: element.pointColor,
                 balloonMaxWidth: 1000,

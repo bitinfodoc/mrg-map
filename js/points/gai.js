@@ -1,12 +1,56 @@
-import area from './../areas/buzuluk.js';
+import area from '../areas/gai.js';
 
-    export const buzulukPoint = {
-        coord: [52.793028, 52.267594],
+export const gaiPoint = {
+        coord: [51.455939, 58.438248],
         type: 'office',
+        name: 'г. Гай',
         mainPoint: true,
-        name: 'г. Бузулук',
-        address: 'ул. М.Горького, 51А',
-        phone: '(35342) 7-40-09',
+        address: 'ул. Орская, д.125 А.',
+        phone: '(353-62) 4-90-06',
+        work: {
+            hide: false,
+            monday: 'с 8:30 до 17:30 ',
+            tuesday: 'с 8:30 до 17:30 ',
+            wednesday: 'с 8:30 до 17:30 ',
+            thursday: 'с 8:30 до 17:30 ',
+            friday: 'с 8:30 до 16:15',
+            saturday: 'Выходной',
+            sunday: 'Выходной',
+            other: ''
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
+    }
+export const gaiTerminalPoint = {
+        coord: [51.475224, 58.458577],
+        type: 'terminal',
+        name: 'г. Гай',
+        address: 'ул.Молодежная, 11',
+        phone: '',
+        work: {
+            hide: false,
+            monday: 'с 8:30 до 17:30 ',
+            tuesday: 'с 8:30 до 17:30 ',
+            wednesday: 'с 8:30 до 17:30 ',
+            thursday: 'с 8:30 до 17:30 ',
+            friday: 'с 8:30 до 16:15',
+            saturday: 'Выходной',
+            sunday: 'Выходной',
+            other: ''
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
+        pointImage: '/mapimages/gai_gro.jpg',
+    }
+
+    export const kvarkenoPoint = {
+        coord: [52.080351, 59.728615],
+        type: 'office',
+        name: 'п. Кваркено',
+        address: 'ул. 1-я Целинная, 25',
+        phone: '(353-64) 2-25-00',
         work: {
             hide: false,
             monday: 'с 8:30 до 17:30 ',
@@ -23,13 +67,55 @@ import area from './../areas/buzuluk.js';
         pointColor: area.areaColor,
     }
 
+    export const adamovkaPoint = {
+        coord: [51.521633, 59.942450],
+        type: 'office',
+        name: 'п. Адамовка',
+        address: 'ул. Целинная, 15',
+        phone: '(353-64) 2-25-00',
+        work: {
+            hide: false,
+            monday: 'с 8:30 до 17:30 ',
+            tuesday: 'с 8:30 до 17:30 ',
+            wednesday: 'с 8:30 до 17:30 ',
+            thursday: 'с 8:30 до 17:30 ',
+            friday: 'с 8:30 до 16:15',
+            saturday: 'Выходной',
+            sunday: 'Выходной',
+            other: ''
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
+    }
 
-export const buzulukTerminalPoint = {
-        coord: [52.803803, 52.208189],
+    export const novoorskPoint = {
+        coord: [51.378756, 58.989948],
+        type: 'office',
+        name: 'п. Новоорск',
+        address: 'пер. Совхозный, 52',
+        phone: '(353-63) 3-22-04',
+        work: {
+            hide: false,
+            monday: 'с 8:30 до 17:30 ',
+            tuesday: 'с 8:30 до 17:30 ',
+            wednesday: 'с 8:30 до 17:30 ',
+            thursday: 'с 8:30 до 17:30 ',
+            friday: 'с 8:30 до 16:15',
+            saturday: 'Выходной',
+            sunday: 'Выходной',
+            other: ''
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
+    }
+    export const novoorskTerminalPoint = {
+        coord: [51.199375, 58.329839],
         type: 'terminal',
-        name: 'г. Бузулук',
-        address: 'ул. Гая, 110',
-        phone: '',
+        name: 'г. Новотроицк',
+        address: 'ул. Железнодорожная, 17',
+        // phone: '(353-63) 3-22-04',
         work: {
             hide: false,
             monday: 'с 8:30 до 17:30 ',
@@ -44,15 +130,15 @@ export const buzulukTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
-        pointImage: '/mapimages/buzuluk_gro.jpg',
+        pointImage: '/mapimages/novotroick_gro.jpg',
     }
 
-    export const grachevPoint = {
-        coord: [52.919042, 52.889842],
+    export const novotroickPoint = {
+        coord: [51.189649, 58.275931],
         type: 'office',
-        name: 'с. Грачевка',
-        address: 'ул. Тургенева, 3',
-        phone: '(353-44) 2-30-09',
+        name: 'г. Новотроицк',
+        address: 'ул. Советская, 113',
+        phone: '(353-7) 68-40-28',
         work: {
             hide: false,
             monday: 'с 8:30 до 17:30 ',
@@ -67,61 +153,15 @@ export const buzulukTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
-        pointImage: '/mapimages/grachevka.jpg',
+        pointImage: '/mapimages/novotroick.jpg',
     }
 
-    export const kurmanPoint = {
-        coord: [52.506920, 52.064279],
+    export const energetPoint = {
+        coord: [51.746150, 58.794888],
         type: 'office',
-        name: 'с. Курманаевка',
-        address: 'ул. Фомина, 2',
-        phone: '(353-41) 2-50-09',
-        work: {
-            hide: false,
-            monday: 'с 8:30 до 17:30 ',
-            tuesday: 'с 8:30 до 17:30 ',
-            wednesday: 'с 8:30 до 17:30 ',
-            thursday: 'с 8:30 до 17:30 ',
-            friday: 'с 8:30 до 16:15',
-            saturday: 'Выходной',
-            sunday: 'Выходной',
-            other: ''
-        },
-        boss: area.boss,
-        areaName: area.areaName,
-        pointColor: area.areaColor,
-        pointImage: '/mapimages/kurmanaevka.jpg',
-    }
-
-    export const pervomaiPoint = {
-        coord: [51.897396, 51.639699],
-        type: 'office',
-        name: 'п. Первомайский',
-        address: 'ул. Мирная, 46',
-        phone: '(353-48) 2-10-09',
-        work: {
-            hide: false,
-            monday: 'с 8:30 до 17:30 ',
-            tuesday: 'с 8:30 до 17:30 ',
-            wednesday: 'с 8:30 до 17:30 ',
-            thursday: 'с 8:30 до 17:30 ',
-            friday: 'с 8:30 до 16:15',
-            saturday: 'Выходной',
-            sunday: 'Выходной',
-            other: ''
-        },
-        boss: area.boss,
-        areaName: area.areaName,
-        pointColor: area.areaColor,
-        pointImage: '/mapimages/pervomai.jpg',
-    }
-
-    export const tockiyPoint = {
-        coord: [52.528325, 52.747286],
-        type: 'office',
-        name: 'с. Тоцкое',
-        address: 'ул. Красная Площадь, 6',
-        phone: '(353-49) 2-50-09',
+        name: 'п. Энергетик',
+        address: 'ул. Малиновского, 44',
+        phone: '(353-63) 3-20-04',
         work: {
             hide: false,
             monday: 'с 8:30 до 17:30 ',

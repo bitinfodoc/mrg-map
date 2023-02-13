@@ -1,6 +1,13 @@
+import area from './../areas/gai.js';
+import { adamovkaPoint } from './../points/gai.js';
+
 export const adamovkaRegion = {
     polygonName: 'Адамовский район',
-    color: '#0033cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: adamovkaPoint,
     polygon: [
         [
           [

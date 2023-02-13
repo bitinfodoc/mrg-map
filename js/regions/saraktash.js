@@ -1,6 +1,13 @@
+import area from './../areas/mednogorsk.js';
+import { saraktashPoint } from './../points/mednogorsk.js';
+
 export const saraktashRegion = {
     polygonName: 'Саракташский район',
-    color: '#0099ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: saraktashPoint,
     polygon: [
         [
           [

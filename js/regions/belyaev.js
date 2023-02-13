@@ -1,6 +1,13 @@
+import area from './../areas/mednogorsk.js';
+import { belyaevkaPoint } from './../points/mednogorsk.js';
+
 export const belyaevRegion = {
     polygonName: 'Беляевский район',
-    color: '#0099ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: belyaevkaPoint,
     polygon: [
         [
           [

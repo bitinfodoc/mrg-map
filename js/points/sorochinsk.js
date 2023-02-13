@@ -3,6 +3,7 @@ import area from '../areas/sorochinsk.js';
 export const sorochinskPoint = {
         coord: [52.436998, 53.153540],
         type: 'office',
+        mainPoint: true,
         name: 'г. Сорочинск',
         address: 'ул. Чапаева, 64',
         phone: '(353-46) 6-00-09',
@@ -86,4 +87,5 @@ export const tashlaPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/tashla.jpg',
     }

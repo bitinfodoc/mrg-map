@@ -1,6 +1,13 @@
+import area from './../areas/mednogorsk.js';
+import { kuvaPoint } from './../points/mednogorsk.js';
+
 export const kuvaRegion = {
     polygonName: 'Кувандыкский район',
-    color: '#0099ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: kuvaPoint,
     polygon: [
         [
           [

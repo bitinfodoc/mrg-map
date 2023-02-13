@@ -1,6 +1,13 @@
+import area from './../areas/gai.js';
+import { novoorskPoint } from './../points/gai.js';
+
 export const novoorskRegion = {
     polygonName: 'Новоорский район',
-    color: '#0033cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: novoorskPoint,
     polygon: [
         [
           [

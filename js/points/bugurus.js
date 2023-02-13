@@ -3,6 +3,7 @@ import area from './../areas/bugurus.js';
 export const buguruslanPoint = {
     coord: [53.651798, 52.437026],
     type: 'office',
+    mainPoint: true,
     name: 'г. Бугуруслан',
     address: 'ул. Красногвардейская, 63',
     phone: '(35352) 6-60-10',
@@ -42,6 +43,7 @@ export const asekeevoPoint = {
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/asekeevo.jpg',
 }
 export const mordvoDobrinoPoint = {
     coord: [54.133130, 53.022435],
@@ -84,4 +86,5 @@ export const severnoePoint = {
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/severnoe.jpg',
 }

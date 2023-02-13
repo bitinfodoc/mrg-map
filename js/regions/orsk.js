@@ -1,6 +1,13 @@
+import area from './../areas/orsk.js';
+import { orskPoint } from './../points/orsk.js';
+
 export const orskRegion = {
     polygonName: 'Городской округ Орск',
-    color: '#0066ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: orskPoint,
     polygon: [
         [
             [

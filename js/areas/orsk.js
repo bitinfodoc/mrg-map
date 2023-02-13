@@ -1,8 +1,8 @@
 export default {
     areaName: 'Орск',
-    areaColor: '#0066ff',
+    areaColor: '#0033cc',
     boss: {
-        image: 'https://orenburgregiongaz.ru/sites/default/files/styles/large/public/persons/nachalnik_abonentskogo_uchastka_g._orska_lyubarskiy_oleg_borisovich.jpg',
+        image: '/mapimages/orsk_main.jpg',
         name: 'Любарский Олег Борисович'
     }
 }

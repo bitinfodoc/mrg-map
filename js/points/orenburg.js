@@ -1,9 +1,34 @@
 import area from '../areas/orenburg.js';
 
 
+
+
+export const samolyotnayaPoint = {
+    coord: [51.788198, 55.126402],
+    type: 'terminal',
+    name:'г. Оренбург',
+    address: 'ул. Самолетная , 83',
+    // phone: '(3532) 444-009',
+    work: {
+        monday: 'с 8:30 до 20:00',
+        tuesday: 'с 8:30 до 17:30',
+        wednesday: 'с 8:30 до 17:30',
+        thursday: 'с 8:30 до 17:30',
+        friday: 'с 8:30 до 16:30',
+        saturday: 'Выходной',
+        sunday: 'Выходной',
+        other: ''
+    },
+    boss: area.boss,
+    areaName: area.areaName,
+    pointColor: area.areaColor,
+}
+
+
 export const proletarskayaPoint = {
     coord: [51.770384, 55.098725],
     type: 'office',
+    mainPoint: true,
     area,
     name:'г. Оренбург',
     address: 'ул. Пролетарская, 72/1',
@@ -35,25 +60,4 @@ export const proletarskayaPoint = {
                     boss: area.boss,
                     areaName: area.areaName,
                     pointColor: area.areaColor,
-}
-
-export const samolyotnayaPoint = {
-    coord: [51.788198, 55.126402],
-    type: 'terminal',
-    name:'г. Оренбург',
-    address: 'ул. Самолетная , 83',
-    // phone: '(3532) 444-009',
-    work: {
-        monday: 'с 8:30 до 20:00',
-        tuesday: 'с 8:30 до 17:30',
-        wednesday: 'с 8:30 до 17:30',
-        thursday: 'с 8:30 до 17:30',
-        friday: 'с 8:30 до 16:30',
-        saturday: 'Выходной',
-        sunday: 'Выходной',
-        other: ''
-    },
-    boss: area.boss,
-    areaName: area.areaName,
-    pointColor: area.areaColor,
 }

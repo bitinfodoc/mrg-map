@@ -1,6 +1,13 @@
+import area from './../areas/orsk.js';
+import { svetliyPoint } from './../points/orsk.js';
+
 export const svetliyRegion = {
     polygonName: 'Светлинский район',
-    color: '#0066ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: svetliyPoint,
     polygon: [
         [
           [

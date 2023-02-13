@@ -1,6 +1,13 @@
+import area from './../areas/mednogorsk.js';
+import { mednogorskPoint } from './../points/mednogorsk.js';
+
 export const mednoRegion = {
     polygonName: 'Медногорский городской округ',
-    color: '#0099ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: mednogorskPoint,
     polygon: [
         [
           [

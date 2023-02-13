@@ -4,6 +4,7 @@ import area from '../areas/oren.js';
 export const orenPoint = {
     coord: [51.770384, 55.098725],
     type: 'office',
+    mainPoint: true,
     area,
     name:'г. Оренбург',
     address: 'ул. Пролетарская, 72/1',

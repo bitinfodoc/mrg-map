@@ -3,6 +3,7 @@ import area from '../areas/mednogorsk.js';
 export const mednogorskPoint = {
         coord: [51.408289, 57.581920],
         type: 'office',
+        mainPoint: true,
         name: 'г. Медногорск',
         address: 'ул. Кирова, 2',
         phone: '(353-79) 3-95-09',
@@ -42,6 +43,8 @@ export const belyaevkaPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/belyaevka.jpg',
+
     }
 
     export const kuvaPoint = {
@@ -64,6 +67,7 @@ export const belyaevkaPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/kuva.jpg',
     }
 
     
@@ -87,4 +91,5 @@ export const saraktashPoint = {
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/saraktash.jpg',
 }

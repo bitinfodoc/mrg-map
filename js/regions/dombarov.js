@@ -1,6 +1,13 @@
+import area from './../areas/orsk.js';
+import { dombarovPoint } from './../points/orsk.js';
+
 export const dombarovRegion = {
     polygonName: 'Домбаровский район',
-    color: '#0066ff',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: dombarovPoint,
     polygon: [
         [
           [

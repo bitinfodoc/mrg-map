@@ -1,6 +1,13 @@
+import area from './../areas/gai.js';
+import { gaiPoint } from './../points/gai.js';
+
 export const gaiRegion = {
     polygonName: 'Гайский район',
-    color: '#0033cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: gaiPoint,
     polygon: [
         [
           [

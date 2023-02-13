@@ -1,6 +1,13 @@
+import area from './../areas/gai.js';
+import { kvarkenoPoint } from './../points/gai.js';
+
 export const novotroickRegion = {
     polygonName: 'Новотроицкий городской округ',
-    color: '#0033cc',
+    area,
+    color: area.areaColor,
+    areaName: area.areaName,
+    mainAreaPoint: '',
+    regionPoint: kvarkenoPoint,
     polygon: [
         [
             [

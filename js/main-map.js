@@ -25,10 +25,10 @@ async function main() {
 
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                 (['<div style="margin: 0px 0;">',
+                    '<h2 style="margin-bottom: 5px; padding: 0;">{{properties.typeName}} в {{properties.name}}</h2>',
+                    '<i>Абонентский участок {{properties.areaName}}</i><br />',
                     '<div style="float: left; margin: 0 10px; max-width: 400px;">',
-                        '<b>{{properties.name}}</b><br/>',
-                        '<i>Абонентский участок {{properties.areaName}}</i><br/><br/>',
-                        element.regionPoint && '<b>Офис обслуживания в вашем районе</b><br/>',
+                        element.regionPoint && '<b>Офис обслуживания в вашем районе</b>',
                         element.regionPoint && '<ul>',
                         element.regionPoint && '<li>{{properties.regionPoint.name}}, ',
                         element.regionPoint && '{{properties.regionPoint.address}}</li>',
@@ -78,6 +78,7 @@ async function main() {
                     bossImage: element.area && element.area.boss ? element.area.boss.image : '#',
                     mainAreaPoint: element.mainAreaPoint,
                     regionPoint: element.regionPoint,
+                    typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема',
                     // balloonContent: element.polygonName,
                     hintContent: element.area ? ([element.polygonName, ', абонентский участок ', element.area.areaName]).join('') : element.polygonName
                 },
@@ -95,21 +96,23 @@ async function main() {
             myMap.geoObjects.add(newRegion);
         });
     };
-
+    // var gCollection = new YMaps.GeoObjectCollection();
     function createPoints(points) {
 
 
         points.forEach( (element) => {
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                (['<div style="margin: 0;">',
-                    '<div style="float: left; margin: 0 10px;">',
-                        '<b>{{properties.typeName}} в {{properties.name}}</b><br />',
-                        '<i>Абонентский участок {{properties.areaName}}</i><br />',
-                        '<ul>',
-                            '<li>Адрес: {{properties.address}}</li>',
-                            element.phone && '<li>Телефон: {{properties.phone}}</li>',
-                        '</ul>',
-                        '<b>Режим работы</b><br />',
+                (['<div style="margin: 0; ">',
+                    '<h2 style="margin: 10px 0 0 10px; padding-bottom: 5px">{{properties.typeName}} в {{properties.name}}</h2>',
+                    '<span style="margin: 0 10px; "><i>Абонентский участок {{properties.areaName}}</i></span><br />',
+                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 400px;">',
+                        '<b>Адрес:</b> {{properties.name}}, {{properties.address}}<br />',
+                        element.phone && '<b>Телефон:</b> {{properties.phone}}<br />',
+                        // '<ul>',
+                        //     '<li>{{properties.name}}, {{properties.address}}</li>',
+                        //     '<li>Телефон: {{properties.phone}}</li>',
+                        // '</ul>',
+                        '<br /><b>Режим работы</b><br />',
                             !element.work.hide ? '<ul>' : '',
                             !element.work.hide ? '<li>Понедельник: {{properties.work.monday}}</li>' : '',
                             !element.work.hide ? '<li>Вторник: {{properties.work.tuesday}}</li>' : '',
@@ -121,10 +124,14 @@ async function main() {
                             !element.work.hide ? '</ul>' : '',
                         element.work.other,
                         '</div>',
-                        '<div style="float: right; margin: 0 0 0 10px;">',
-                        '<img width="300px" alt="" src="{{properties.bossImage}}" /><br/>',
-                            '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>',
-                        '</div>',
+                        element.mainPoint ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
+                        element.mainPoint ?'<img width="600px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                        element.mainPoint ?'<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
+                        element.mainPoint ?'</div>' : '',
+                        element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
+                        element.pointImage ?'<img width="300px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
+                        // element.pointImage ?'<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
+                        element.pointImage ?'</div>' : '',
                 '</div>']).join(''), {
                 build: function () {
                     BalloonContentLayout.superclass.build.call(this);
@@ -133,17 +140,18 @@ async function main() {
         
             let newpoint = new ymaps.Placemark(element.coord,  {
                 name: element.name,
-                typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема' ,
+                typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема',
                 address: element.address,
                 phone: element.phone,
                 work: element.work,
                 areaName: element.areaName,
                 bossName: element.boss.name,
                 bossImage: element.boss.image,
+                pointImage: element.pointImage,
                 hintContent: ([element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема', ' в ', element.name]).join('')
             }, {
                 balloonContentLayout: BalloonContentLayout,      
-                preset: element.type === 'office' ? 'islands#homeIcon' : 'islands#personIcon',
+                preset: element.mainPoint ? 'islands#homeCircleIcon' : element.type === 'terminal' ? 'islands#personCircleIcon' : 'islands#circleIcon',
                 // preset: element.type.id === 'office' ? 'islands#pocketIcon' : 'islands#starIcon',
                 iconColor: element.pointColor,
                 balloonMaxWidth: 1000,
@@ -152,10 +160,12 @@ async function main() {
                 iconColor: element.pointsColor
             })
 
+            // gCollection.add(newpoint);
             myMap.geoObjects.add(newpoint);
+
         });
 
-
+        // myMap.addOverlay(gCollection);
         
     } 
 

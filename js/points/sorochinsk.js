@@ -1,27 +1,51 @@
 import area from '../areas/sorochinsk.js';
 
 export const sorochinskPoint = {
-        coord: [52.436998, 53.153540],
-        type: 'office',
-        mainPoint: true,
-        name: 'г. Сорочинск',
-        address: 'ул. Чапаева, 64',
-        phone: '(353-46) 6-00-09',
-        work: {
-            hide: false,
-            monday: 'с 8:30 до 17:30 ',
-            tuesday: 'с 8:30 до 17:30 ',
-            wednesday: 'с 8:30 до 17:30 ',
-            thursday: 'с 8:30 до 17:30 ',
-            friday: 'с 8:30 до 16:15',
-            saturday: 'Выходной',
-            sunday: 'Выходной',
-            other: ''
-        },
-        boss: area.boss,
-        areaName: area.areaName,
-        pointColor: area.areaColor,
-    }
+    coord: [52.436998, 53.153540],
+    type: 'office',
+    mainPoint: true,
+    name: 'г. Сорочинск',
+    address: 'ул. Чапаева, 64',
+    phone: '(353-46) 6-00-09',
+    work: {
+        hide: false,
+        monday: 'с 8:30 до 17:30 ',
+        tuesday: 'с 8:30 до 17:30 ',
+        wednesday: 'с 8:30 до 17:30 ',
+        thursday: 'с 8:30 до 17:30 ',
+        friday: 'с 8:30 до 16:15',
+        saturday: 'Выходной',
+        sunday: 'Выходной',
+        other: ''
+    },
+    boss: area.boss,
+    areaName: area.areaName,
+    pointColor: area.areaColor,
+}
+
+export const sorochinskTerminalPoint = {
+    coord: [52.409165, 53.160421],
+    type: 'terminal',
+    mainPoint: false,
+    name: 'г. Сорочинск',
+    address: 'ул. Фурманова, 107',
+    // phone: '(353-46) 6-00-09',
+    work: {
+        hide: false,
+        monday: 'с 8:30 до 17:30 ',
+        tuesday: 'с 8:30 до 17:30 ',
+        wednesday: 'с 8:30 до 17:30 ',
+        thursday: 'с 8:30 до 17:30 ',
+        friday: 'с 8:30 до 16:15',
+        saturday: 'Выходной',
+        sunday: 'Выходной',
+        other: ''
+    },
+    boss: area.boss,
+    areaName: area.areaName,
+    pointColor: area.areaColor,
+    pointImage: '/mapimages/sorochinsk_gro.jpg',
+}
 
 export const novosergPoint = {
         coord: [52.098623, 53.641424],
@@ -43,6 +67,7 @@ export const novosergPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/novoserg.jpg',
     }
 
 export const pleshanovoPoint = {
@@ -65,6 +90,7 @@ export const pleshanovoPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/pleshanovo.jpg',
     }
 
 export const tashlaPoint = {

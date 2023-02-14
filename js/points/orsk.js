@@ -24,6 +24,30 @@ export const orskPoint = {
         // pointImage: '/mapimages/orsk_main.jpg',
     }
 
+    export const orskTerminalPoint = {
+        coord: [51.224754, 58.474630],
+        type: 'terminal',
+        mainPoint: true,
+        name: 'г. Орск',
+        address: 'ул. Крупской, 17',
+        // phone: '(353-7) 20-33-59',
+        work: {
+            hide: false,
+            monday: 'с 8:30 до 17:30 ',
+            tuesday: 'с 8:30 до 17:30 ',
+            wednesday: 'с 8:30 до 17:30 ',
+            thursday: 'с 8:30 до 17:30 ',
+            friday: 'с 8:30 до 16:15',
+            saturday: 'Выходной',
+            sunday: 'Выходной',
+            other: ''
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
+        // pointImage: '/mapimages/orsk_main.jpg',
+    }
+
 export const dombarovPoint = {
         coord: [50.758650, 59.527177],
         type: 'office',

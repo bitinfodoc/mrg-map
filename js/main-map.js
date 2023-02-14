@@ -1,7 +1,6 @@
 import regions from './regions/allregions.js'
 import points from './points/allpoints.js'
 
-
 document.getElementById('hello').innerHTML='Привет js';
 
 async function main() {
@@ -18,23 +17,22 @@ async function main() {
         return data.map(i => i.map(i => [i[1], i[0]] ))
      };
 
-
     function createRegion(region) {
         region.forEach( (element) => {
-            // console.log(element.area.boss.image)
-
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                 (['<div style="margin: 0px 0;">',
-                    '<h2 style="margin-bottom: 5px; padding: 0;">{{properties.typeName}} в {{properties.name}}</h2>',
-                    '<i>Абонентский участок {{properties.areaName}}</i><br />',
-                    '<div style="float: left; margin: 0 10px; max-width: 400px;">',
-                        element.regionPoint && '<b>Офис обслуживания в вашем районе</b>',
-                        element.regionPoint && '<ul>',
-                        element.regionPoint && '<li>{{properties.regionPoint.name}}, ',
-                        element.regionPoint && '{{properties.regionPoint.address}}</li>',
-                        element.regionPoint && element.regionPoint.phone && '<li>Телефон: {{properties.regionPoint.phone}}</li>',
-                        element.regionPoint && '</ul>',
-                        '<b>Режим работы</b><br />',
+                    '<h2 style="margin: 0 10px; padding-bottom: 5px;">{{properties.typeName}} в {{properties.pointName}}</h2>',
+                    '<div style="margin: 0 10px 10px;"><i>{{properties.name}}, абонентский участок {{properties.areaName}}</i></div>',
+                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 380px;">',
+                        element.regionPoint && '<b>Адрес:</b> {{properties.regionPoint.name}}, {{properties.regionPoint.address}}<br />',
+                        element.regionPoint && element.regionPoint.phone && '<b>Телефон:</b> {{properties.regionPoint.phone}}<br />',
+                        // element.regionPoint && '<b>Офис обслуживания в вашем районе</b>',
+                        // element.regionPoint && '<ul>',
+                        // element.regionPoint && '<li>{{properties.regionPoint.name}}, ',
+                        // element.regionPoint && '{{properties.regionPoint.address}}</li>',
+                        // element.regionPoint && element.regionPoint.phone && '<li>Телефон: {{properties.regionPoint.phone}}</li>',
+                        // element.regionPoint && '</ul>',
+                        '<br /><b>Режим работы</b><br />',
                         element.regionPoint && !element.regionPoint.work.hide ? '<ul>' : '',
                         element.regionPoint && !element.regionPoint.work.hide ? '<li>Понедельник: {{properties.regionPoint.work.monday}}</li>' : '',
                         element.regionPoint && !element.regionPoint.work.hide ? '<li>Вторник: {{properties.regionPoint.work.tuesday}}</li>' : '',
@@ -45,19 +43,11 @@ async function main() {
                         element.regionPoint && !element.regionPoint.work.hide ? '<li>Воскресенье: {{properties.regionPoint.work.sunday}}</li>' : '',
                         element.regionPoint && !element.regionPoint.work.hide ? '</ul>' : '',
                         element.regionPoint && element.regionPoint.work.other,
-
-                        // element.mainAreaPoint && '<b>Основной офис абонентского участка</b><br/>',
-
                     '</div>',
-                    '<div style="float: right; margin: 0 0 0 10px;">',
-                        '<img width="300px" alt="" src="{{properties.bossImage}}" /><br/>',
-                        // '<b>Абонентский участок {{properties.areaName}}</b><br />',
-                        '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>',
-                        element.mainAreaPoint && '<ul>',
-                        element.mainAreaPoint && '<li>{{properties.mainAreaPoint.name}}, ',
-                        element.mainAreaPoint && '{{properties.mainAreaPoint.address}}</li>',
-                        element.mainAreaPoint && '<li>Телефон: {{properties.mainAreaPoint.phone}}</li>',
-                        element.mainAreaPoint && '</ul>',
+                    '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">',
+                        element.regionPoint && element.regionPoint.pointImage && !element.regionPoint.mainPoint ? '<img width="300px" alt="" src="{{properties.regionPoint.pointImage}}" /><br/>' : '',
+                        element.regionPoint && element.regionPoint.mainPoint ? '<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                        element.regionPoint && element.regionPoint.mainPoint ? '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
                     '</div>',
                 '</div>']).join(''), {
                 build: function () {
@@ -77,9 +67,9 @@ async function main() {
                     bossName: element.area && element.area.boss ? element.area.boss.name : '-',
                     bossImage: element.area && element.area.boss ? element.area.boss.image : '#',
                     mainAreaPoint: element.mainAreaPoint,
+                    pointName: element.regionPoint.name,
                     regionPoint: element.regionPoint,
-                    typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема',
-                    // balloonContent: element.polygonName,
+                    typeName: element.regionPoint.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема',
                     hintContent: element.area ? ([element.polygonName, ', абонентский участок ', element.area.areaName]).join('') : element.polygonName
                 },
             }, {
@@ -91,21 +81,19 @@ async function main() {
                 strokeStyle: 'solid',
                 balloonMaxWidth: 1000,
                 balloonMaxHeight: 1000,
-                
+                zIndex: element.zIndex
             });
             myMap.geoObjects.add(newRegion);
         });
     };
-    // var gCollection = new YMaps.GeoObjectCollection();
+
     function createPoints(points) {
-
-
         points.forEach( (element) => {
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                 (['<div style="margin: 0; ">',
                     '<h2 style="margin: 10px 0 0 10px; padding-bottom: 5px">{{properties.typeName}} в {{properties.name}}</h2>',
                     '<span style="margin: 0 10px; "><i>Абонентский участок {{properties.areaName}}</i></span><br />',
-                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 400px;">',
+                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 350px;">',
                         '<b>Адрес:</b> {{properties.name}}, {{properties.address}}<br />',
                         element.phone && '<b>Телефон:</b> {{properties.phone}}<br />',
                         // '<ul>',
@@ -125,7 +113,7 @@ async function main() {
                         element.work.other,
                         '</div>',
                         element.mainPoint ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
-                        element.mainPoint ?'<img width="600px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                        element.mainPoint ?'<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
                         element.mainPoint ?'<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
                         element.mainPoint ?'</div>' : '',
                         element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
@@ -141,6 +129,7 @@ async function main() {
             let newpoint = new ymaps.Placemark(element.coord,  {
                 name: element.name,
                 typeName: element.type === 'office' ? 'Офис обслуживания' : 'Терминал интерактивного приема',
+                type: element.type,
                 address: element.address,
                 phone: element.phone,
                 work: element.work,
@@ -160,18 +149,16 @@ async function main() {
                 iconColor: element.pointsColor
             })
 
-            // gCollection.add(newpoint);
             myMap.geoObjects.add(newpoint);
 
         });
-
-        // myMap.addOverlay(gCollection);
         
     } 
 
+    
     createRegion(regions)
     createPoints(points);
-    
+
 };
 
 

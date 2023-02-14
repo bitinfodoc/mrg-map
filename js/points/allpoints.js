@@ -15,7 +15,7 @@ export default [
     bugurus.buguruslanPoint, bugurus.asekeevoPoint, bugurus.mordvoDobrinoPoint, bugurus.severnoePoint, 
     buzuluk.buzulukPoint, buzuluk.grachevPoint, buzuluk.kurmanPoint, buzuluk.pervomaiPoint, buzuluk.tockiyPoint, buzuluk.buzulukTerminalPoint,
     abdulino.abdulinoPoint, abdulino.ponomarPoint, abdulino.matveevPoint,
-    sorochinsk.sorochinskPoint, sorochinsk.tashlaPoint, sorochinsk.pleshanovoPoint, sorochinsk.novosergPoint,
+    sorochinsk.sorochinskPoint, sorochinsk.tashlaPoint, sorochinsk.pleshanovoPoint, sorochinsk.novosergPoint, sorochinsk.sorochinskTerminalPoint,
     orenburg.proletarskayaPoint, orenburg.samolyotnayaPoint,
     oren.sharlikPoint, oren.tulganPoint, oren.aleksandPoint, oren.ilekPoint, oren.oktyabrPoint, oren.perevolotskPoint,
     solileck.solileckPoint, solileck.akbulakPoint, solileck.solileckTerminalPoint,

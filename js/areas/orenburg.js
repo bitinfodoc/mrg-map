@@ -2,7 +2,7 @@ export default {
     areaName: 'Оренбург',
     areaColor: '#0066ff',
     boss: {
-        image: 'https://www.orenburgregiongaz.ru/sites/default/files/styles/large/public/persons/bychkova.jpg',
+        image: '/mapimages/orenburg_gorod_main.jpg',
         name: 'Бычкова Екатерина Александровна'
     }
 }

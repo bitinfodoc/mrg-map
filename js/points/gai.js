@@ -5,6 +5,7 @@ export const gaiPoint = {
         type: 'office',
         name: 'г. Гай',
         mainPoint: true,
+        zindex: 103,
         address: 'ул. Орская, д.125 А.',
         phone: '(353-62) 4-90-06',
         work: {
@@ -21,10 +22,12 @@ export const gaiPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/gai_main_short.jpg',
     }
 export const gaiTerminalPoint = {
         coord: [51.475224, 58.458577],
         type: 'terminal',
+        zindex: 31,
         name: 'г. Гай',
         address: 'ул.Молодежная, 11',
         phone: '',
@@ -48,6 +51,7 @@ export const gaiTerminalPoint = {
     export const kvarkenoPoint = {
         coord: [52.080351, 59.728615],
         type: 'office',
+        zindex: 32,
         name: 'п. Кваркено',
         address: 'ул. 1-я Целинная, 25',
         phone: '(353-64) 2-25-00',
@@ -65,11 +69,13 @@ export const gaiTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/kvarkeno.jpg',
     }
 
     export const adamovkaPoint = {
         coord: [51.521633, 59.942450],
         type: 'office',
+        zindex: 33,
         name: 'п. Адамовка',
         address: 'ул. Целинная, 15',
         phone: '(353-64) 2-25-00',
@@ -87,11 +93,13 @@ export const gaiTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/adamovka.jpg',
     }
 
     export const novoorskPoint = {
         coord: [51.378756, 58.989948],
         type: 'office',
+        zindex: 34,
         name: 'п. Новоорск',
         address: 'пер. Совхозный, 52',
         phone: '(353-63) 3-22-04',
@@ -109,10 +117,12 @@ export const gaiTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/novoorsk.jpg',
     }
     export const novoorskTerminalPoint = {
         coord: [51.199375, 58.329839],
         type: 'terminal',
+        zindex: 35,
         name: 'г. Новотроицк',
         address: 'ул. Железнодорожная, 17',
         // phone: '(353-63) 3-22-04',
@@ -136,6 +146,7 @@ export const gaiTerminalPoint = {
     export const novotroickPoint = {
         coord: [51.189649, 58.275931],
         type: 'office',
+        zindex: 36,
         name: 'г. Новотроицк',
         address: 'ул. Советская, 113',
         phone: '(353-7) 68-40-28',
@@ -159,6 +170,7 @@ export const gaiTerminalPoint = {
     export const energetPoint = {
         coord: [51.746150, 58.794888],
         type: 'office',
+        zindex: 37,
         name: 'п. Энергетик',
         address: 'ул. Малиновского, 44',
         phone: '(353-63) 3-20-04',
@@ -176,4 +188,5 @@ export const gaiTerminalPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/energetik.jpg',
     }

@@ -4,6 +4,7 @@ export const orskPoint = {
         coord: [51.224754, 58.474630],
         type: 'office',
         mainPoint: true,
+        zindex: 105,
         name: 'г. Орск',
         address: 'ул. Ленинского Комсомола, 43',
         phone: '(353-7) 20-33-59',
@@ -21,13 +22,14 @@ export const orskPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
-        // pointImage: '/mapimages/orsk_main.jpg',
+        pointImage: '/mapimages/orsk_main_short.jpg',
     }
 
     export const orskTerminalPoint = {
-        coord: [51.224754, 58.474630],
+        coord: [51.240878, 58.482337],
         type: 'terminal',
-        mainPoint: true,
+        mainPoint: false,
+        zindex: 51,
         name: 'г. Орск',
         address: 'ул. Крупской, 17',
         // phone: '(353-7) 20-33-59',
@@ -45,12 +47,13 @@ export const orskPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
-        // pointImage: '/mapimages/orsk_main.jpg',
+        pointImage: '/mapimages/orsk_gro.jpg',
     }
 
 export const dombarovPoint = {
         coord: [50.758650, 59.527177],
         type: 'office',
+        zindex: 52,
         name: 'п. Домбаровский',
         address: 'ул. Кирова, 6, тел',
         phone: '(353-67) 2-00-23, (35368) 3-10-09',
@@ -74,6 +77,7 @@ export const dombarovPoint = {
 export const svetliyPoint = {
         coord: [50.819703, 60.852587],
         type: 'office',
+        zindex: 53,
         name: 'п. Светлый',
         address: 'ул. Торговая, 3',
         phone: '(353-66) 2-50-18',
@@ -97,6 +101,7 @@ export const svetliyPoint = {
 export const yasniyPoint = {
         coord: [51.036011, 59.872786],
         type: 'office',
+        zindex: 54,
         name: 'г. Ясный',
         address: 'ул. Ленина, 9',
         phone: '(353-68) 3-10-09',

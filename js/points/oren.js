@@ -3,7 +3,7 @@ import area from '../areas/oren.js';
 
 export const orenPoint = {
     coord: [51.770384, 55.098725],
-    zIndex: 100,
+    zIndex: 109,
     type: 'office',
     mainPoint: true,
     area,
@@ -37,11 +37,13 @@ export const orenPoint = {
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/orenburg_main_short.jpg',
 }
 
 export const aleksandPoint = {
     coord: [52.683327, 54.412178],
     type: 'office',
+    zindex: 91,
     name:'с. Александровка',
     address: 'ул. Маяковского, 10',
     phone: '(353-59) 2-45-06',
@@ -64,6 +66,7 @@ export const aleksandPoint = {
 export const sakmaraPoint = {
     coord: [51.985346, 55.327795],
     type: 'office',
+    zindex: 92,
     name:'с. Сакмара',
     address: 'ул. Комсомольская, 5',
     phone: '(353-31) 2-22-21',
@@ -86,6 +89,7 @@ export const sakmaraPoint = {
 export const oktyabrPoint = {
     coord: [52.356153, 55.516019],
     type: 'office',
+    zindex: 93,
     name:'с. Октябрьское',
     address: 'ул. Губкина, 1',
     phone: '(353-30) 2-50-06',
@@ -108,6 +112,7 @@ export const oktyabrPoint = {
 export const ilekPoint = {
     coord: [51.533036, 53.374849],
     type: 'office',
+    zindex: 94,
     name:'с. Илек',
     address: 'ул. Пионерская, 29',
     phone: '(353-37) 2-75-27',
@@ -130,6 +135,7 @@ export const ilekPoint = {
 export const perevolotskPoint = {
     coord: [51.882266, 54.185965],
     type: 'office',
+    zindex: 95,
     name:'п. Переволоцкий',
     address: 'ул. Восточная, 12б',
     phone: '(353-38) 2-20-13',
@@ -152,6 +158,7 @@ export const perevolotskPoint = {
 export const tulganPoint = {
     coord: [52.346587, 56.153203],
     type: 'office',
+    zindex: 96,
     name:'с. Тюльган',
     address: 'пер. Газовый, 5',
     phone: '(353-32) 2-90-20',
@@ -174,6 +181,7 @@ export const tulganPoint = {
 export const sharlikPoint = {
     coord: [52.920802, 54.716770],
     type: 'office',
+    zindex: 97,
     name:'с. Шарлык',
     address: 'ул. Автозаправочная, 1',
     phone: '(353-58) 2-60-04',

@@ -21,5 +21,5 @@ export default [
     solileck.solileckPoint, solileck.akbulakPoint, solileck.solileckTerminalPoint,
     mednogorsk.saraktashPoint, mednogorsk.mednogorskPoint, mednogorsk.kuvaPoint, mednogorsk.belyaevkaPoint,
     gai.gaiPoint, gai.adamovkaPoint, gai.energetPoint, gai.kvarkenoPoint, gai.novoorskPoint, gai.novotroickPoint, gai.gaiTerminalPoint, gai.novoorskTerminalPoint,
-    orsk.orskPoint, orsk.dombarovPoint, orsk.svetliyPoint, orsk.yasniyPoint, 
+    orsk.orskPoint, orsk.dombarovPoint, orsk.svetliyPoint, orsk.yasniyPoint, orsk.orskTerminalPoint
 ];

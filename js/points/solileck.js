@@ -4,6 +4,7 @@ export const solileckPoint = {
     coord: [51.156360, 54.994278],
     type: 'office',
     mainPoint: true,
+    zindex: 106,
     name:'г. Соль-Илецк',
     address: 'ул. Советская, 6/1',
     phone: '(353-36) 2-20-09',
@@ -20,10 +21,12 @@ export const solileckPoint = {
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/solileck_main_short.jpg',
 }
 export const solileckTerminalPoint = {
     coord: [51.152586, 55.012945],
     type: 'terminal',
+    zindex: 21,
     name:'г. Соль-Илецк',
     address: 'пер.Степной,1-а',
     phone: '',

@@ -17,15 +17,16 @@ async function main() {
         return data.map(i => i.map(i => [i[1], i[0]] ))
      };
 
-    function createRegion(region) {
+     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+     console.log(width);
+
+    function createRegion(region, devWidth) {
         region.forEach( (element) => {
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                (['<div style="margin: 0px 0;">',
-                    '<h2 style="margin: 10px 10px 0 10px; padding-bottom: 5px;">{{properties.typeName}} в {{properties.pointName}}</h2>',
-                    '<div style="margin: 0 10px 10px;"><i>{{properties.name}}, абонентский участок {{properties.areaName}}</i></div>',
-                    // '<h2 style="margin: 10px 10px 0 10px; padding-bottom: 5px;">{{properties.typeName}} в {{properties.pointName}}</h2>',
-                    // '<div style="margin: 0 10px 10px;"><i>{{properties.name}}, абонентский участок {{properties.areaName}}</i></div>',
-                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 300px;">',
+                (['<div style="margin: 0;">',
+                        '<h2 style="margin: 5px 5px 0 5px; padding-bottom: 5px;">{{properties.typeName}} в {{properties.pointName}}</h2>',
+                        '<div style="margin: 0 5px 5px;"><i>{{properties.name}}, абонентский участок {{properties.areaName}}</i></div>',
+                        '<div style="display: inline-block; vertical-align: top; margin: 5px; max-width: 300px;">',
                         element.regionPoint && '<b>Адрес:</b> {{properties.regionPoint.name}}, {{properties.regionPoint.address}}<br />',
                         element.regionPoint && element.regionPoint.phone && '<b>Телефон:</b> {{properties.regionPoint.phone}}<br />',
                         '<br /><b>Режим работы:</b><br />',
@@ -38,20 +39,12 @@ async function main() {
                         element.regionPoint && !element.regionPoint.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Суббота:</span> <span>{{properties.regionPoint.work.saturday}}</span></div>' : '',
                         element.regionPoint && !element.regionPoint.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Воскресенье:</span> <span>{{properties.regionPoint.work.sunday}}</span></div>' : '',
                         element.regionPoint && !element.regionPoint.work.hide ? '</div>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<ul>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Понедельник:</span> <span>{{properties.regionPoint.work.monday}}</span></div>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Вторник:</span> {{properties.regionPoint.work.tuesday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Среда:</span> {{properties.regionPoint.work.wednesday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Четверг:</span> {{properties.regionPoint.work.thursday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Пятница:</span> {{properties.regionPoint.work.friday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Суббота:</span> {{properties.regionPoint.work.saturday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '<li style="display: flex; justify-content: space-between;"><span>Воскресенье:</span> {{properties.regionPoint.work.sunday}}</li>' : '',
-                        // element.regionPoint && !element.regionPoint.work.hide ? '</ul>' : '',
                         element.regionPoint && element.regionPoint.work.other,
                     '</div>',
-                    '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">',
-                        element.regionPoint && element.regionPoint.pointImage && !element.regionPoint.mainPoint ? '<img width="300px" alt="" src="{{properties.regionPoint.pointImage}}" /><br/>' : '',
-                        element.regionPoint && element.regionPoint.mainPoint ? '<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                    '<div style="display: inline-block; vertical-align: top; margin: 0 5px;">',
+                        element.regionPoint && element.regionPoint.pointImage && !element.regionPoint.mainPoint ? '<img style="max-width: 290px" alt="" src="{{properties.regionPoint.pointImage}}" /><br/>' : '',
+                        element.regionPoint && element.regionPoint.mainPoint && width >= 1024 ? '<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                        element.regionPoint && element.regionPoint.mainPoint && width < 1024 ? '<img style="max-width: 290px" alt="" src="{{properties.regionPoint.pointImage}}" /><br/>' : '',
                         element.regionPoint && element.regionPoint.mainPoint ? '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
                     '</div>',
                 '</div>']).join(''), {
@@ -64,7 +57,6 @@ async function main() {
                 geometry: {
                     type: "Polygon",
                     coordinates: coordReverse(element.polygon),
-                    // fillRule: "nonZero"
                 },
                 properties: {
                     name: element.polygonName,
@@ -84,7 +76,7 @@ async function main() {
                 opacity: 0.5,
                 strokeWidth: 1,
                 strokeStyle: 'solid',
-                balloonMaxWidth: 1000,
+                balloonMaxWidth: width > 450 ? 1000 : 300,
                 balloonMaxHeight: 1000,
                 zIndex: element.zIndex
             });
@@ -96,47 +88,32 @@ async function main() {
         points.forEach( (element) => {
             var BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                 (['<div style="margin: 0; ">',
-                !element.mainPoint ? '<h2 style="margin: 10px 0 0 10px; padding-bottom: 5px">{{properties.typeName}} в {{properties.name}}</h2>' : '',
-                !element.mainPoint ? '<div style="margin: 0 10px 10px;"><i>Абонентский участок {{properties.areaName}}</i></div>' : '',
-                element.mainPoint ? '<h2 style="margin: 10px 0 0 10px; padding-bottom: 5px">Абонентский участок {{properties.areaName}}</h2>' : '',
-                element.mainPoint ? '<div style="margin: 0 10px 10px;"><i>{{properties.typeName}}</i></div>':'',
+                !element.mainPoint ? '<h2 style="margin: 5px 0 0 5px; padding-bottom: 5px">{{properties.typeName}} в {{properties.name}}</h2>' : '',
+                !element.mainPoint ? '<div style="margin: 0 5px 5px;"><i>Абонентский участок {{properties.areaName}}</i></div>' : '',
+                element.mainPoint ? '<h2 style="margin: 5px 0 0 5px; padding-bottom: 5px">Абонентский участок {{properties.areaName}}</h2>' : '',
+                element.mainPoint ? '<div style="margin: 0 5px 5px;"><i>{{properties.typeName}}</i></div>':'',
 
-                    '<div style="display: inline-block; vertical-align: top; margin: 10px; max-width: 300px;">',
-                        '<b>Адрес:</b> {{properties.name}}, {{properties.address}}<br />',
-                        element.phone && '<b>Телефон:</b> {{properties.phone}}<br />',
-                        // '<ul>',
-                        //     '<li>{{properties.name}}, {{properties.address}}</li>',
-                        //     '<li>Телефон: {{properties.phone}}</li>',
-                        // '</ul>',
-                        '<br /><b>Режим работы</b><br />',
-                            !element.work.hide ? '<div style="max-width: 300px; padding: 10px 0">' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Понедельник:</span> <span>{{properties.work.monday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Вторник:</span> <span>{{properties.work.tuesday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Среда:</span> <span>{{properties.work.wednesday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Четверг:</span> <span>{{properties.work.thursday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Пятница:</span> <span>{{properties.work.friday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Суббота:</span> <span>{{properties.work.saturday}}</span></div>' : '',
-                            !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Воскресенье:</span> <span>{{properties.work.sunday}}</span></div>' : '',
-                            !element.work.hide ? '</div>' : '',
-                            // !element.work.hide ? '<ul>' : '',
-                            // !element.work.hide ? '<li>Понедельник: {{properties.work.monday}}</li>' : '',
-                            // !element.work.hide ? '<li>Вторник: {{properties.work.tuesday}}</li>' : '',
-                            // !element.work.hide ? '<li>Среда: {{properties.work.wednesday}}</li>' : '',
-                            // !element.work.hide ? '<li>Четверг: {{properties.work.thursday}}</li>' : '',
-                            // !element.work.hide ? '<li>Пятница: {{properties.work.friday}}</li>' : '',
-                            // !element.work.hide ? '<li>Суббота: {{properties.work.saturday}}</li>' : '',
-                            // !element.work.hide ? '<li>Воскресенье: {{properties.work.sunday}}</li>' : '',
-                            // !element.work.hide ? '</ul>' : '',
-                        element.work.other,
+                    '<div style="display: inline-block; vertical-align: top; margin: 5px; max-width: 300px;">',
+                            '<b>Адрес:</b> {{properties.name}}, {{properties.address}}<br />',
+                            element.phone && '<b>Телефон:</b> {{properties.phone}}<br />',
+                            '<br /><b>Режим работы</b><br />',
+                                !element.work.hide ? '<div style="width: auto; max-width: 300px; padding: 10px 5px">' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Понедельник:</span> <span>{{properties.work.monday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Вторник:</span> <span>{{properties.work.tuesday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Среда:</span> <span>{{properties.work.wednesday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Четверг:</span> <span>{{properties.work.thursday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Пятница:</span> <span>{{properties.work.friday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Суббота:</span> <span>{{properties.work.saturday}}</span></div>' : '',
+                                !element.work.hide ? '<div style="display: flex; justify-content: space-between;"><span>Воскресенье:</span> <span>{{properties.work.sunday}}</span></div>' : '',
+                                !element.work.hide ? '</div>' : '',
+                                element.work.other,
                         '</div>',
-                        element.mainPoint ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
-                        element.mainPoint ?'<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
-                        element.mainPoint ?'<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
-                        element.mainPoint ?'</div>' : '',
-                        element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 0 0 10px;">' : '',
-                        element.pointImage ?'<img width="300px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
-                        // element.pointImage ?'<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
-                        element.pointImage ?'</div>' : '',
+                    element.mainPoint || element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 5px;">' : '',
+                        element.mainPoint && width >= 1024 ? '<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
+                        element.mainPoint && element.pointImage && width < 1024 ? '<img style="max-width: 290px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
+                        element.mainPoint && width >= 1024 ? '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
+                        // element.pointImage ? '<img style="max-width: 290px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
+                    element.pointImage || element.pointImage ?'</div>' : '',
                 '</div>']).join(''), {
                 build: function () {
                     BalloonContentLayout.superclass.build.call(this);
@@ -158,10 +135,10 @@ async function main() {
             }, {
                 balloonContentLayout: BalloonContentLayout,      
                 preset: element.mainPoint ? 'islands#homeCircleIcon' : element.type === 'terminal' ? 'islands#personCircleIcon' : 'islands#circleIcon',
-                // preset: element.type.id === 'office' ? 'islands#pocketIcon' : 'islands#starIcon',
                 iconColor: element.pointColor,
-                balloonMaxWidth: 1000,
+                balloonMaxWidth:  width > 450 ? 1000 : 300,
                 balloonMaxHeight: 1000,
+                zIndex: element.zindex 
             }, {
                 iconColor: element.pointsColor
             })
@@ -171,6 +148,7 @@ async function main() {
         });
         
     } 
+
 
     
     createRegion(regions)

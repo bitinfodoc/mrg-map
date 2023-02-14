@@ -4,6 +4,7 @@ import area from './../areas/buzuluk.js';
         coord: [52.793028, 52.267594],
         type: 'office',
         mainPoint: true,
+        zindex: 102,
         name: 'г. Бузулук',
         address: 'ул. М.Горького, 51А',
         phone: '(35342) 7-40-09',
@@ -21,12 +22,14 @@ import area from './../areas/buzuluk.js';
         boss: area.boss,
         areaName: area.areaName,
         pointColor: area.areaColor,
+        pointImage: '/mapimages/buzuluk_main_short.jpg',
     }
 
 
 export const buzulukTerminalPoint = {
         coord: [52.803803, 52.208189],
         type: 'terminal',
+        zindex: 21,
         name: 'г. Бузулук',
         address: 'ул. Гая, 110',
         phone: '',
@@ -50,6 +53,7 @@ export const buzulukTerminalPoint = {
     export const grachevPoint = {
         coord: [52.919042, 52.889842],
         type: 'office',
+        zindex: 22,
         name: 'с. Грачевка',
         address: 'ул. Тургенева, 3',
         phone: '(353-44) 2-30-09',
@@ -73,6 +77,7 @@ export const buzulukTerminalPoint = {
     export const kurmanPoint = {
         coord: [52.506920, 52.064279],
         type: 'office',
+        zindex: 23,
         name: 'с. Курманаевка',
         address: 'ул. Фомина, 2',
         phone: '(353-41) 2-50-09',
@@ -96,6 +101,7 @@ export const buzulukTerminalPoint = {
     export const pervomaiPoint = {
         coord: [51.897396, 51.639699],
         type: 'office',
+        zindex: 24,
         name: 'п. Первомайский',
         address: 'ул. Мирная, 46',
         phone: '(353-48) 2-10-09',
@@ -119,6 +125,7 @@ export const buzulukTerminalPoint = {
     export const tockiyPoint = {
         coord: [52.528325, 52.747286],
         type: 'office',
+        zindex: 25,
         name: 'с. Тоцкое',
         address: 'ул. Красная Площадь, 6',
         phone: '(353-49) 2-50-09',

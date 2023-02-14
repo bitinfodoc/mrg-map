@@ -1,7 +1,7 @@
 import regions from './regions/allregions.js'
 import points from './points/allpoints.js'
 
-document.getElementById('hello').innerHTML='Привет js';
+document.getElementById('hello').innerHTML='JS script for generate Yandex Map API';
 
 async function main() {
 
@@ -108,12 +108,12 @@ async function main() {
                                 !element.work.hide ? '</div>' : '',
                                 element.work.other,
                         '</div>',
-                    element.mainPoint || element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 5px;">' : '',
+                    element.mainPoint || element.pointImage ? '<div style="display: inline-block; vertical-align: top; margin: 0 5px; text-align: right;"><div style="text-align: right;">' : '',
                         element.mainPoint && width >= 1024 ? '<img style="max-width: 580px" alt="" src="{{properties.bossImage}}" /><br/>' : '',
                         element.mainPoint && element.pointImage && width < 1024 ? '<img style="max-width: 290px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
                         element.mainPoint && width >= 1024 ? '<i>Начальник абонентского участка {{properties.areaName}}</i><br/><b>{{properties.bossName}}</b><br/>' : '',
-                        // element.pointImage ? '<img style="max-width: 290px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
-                    element.pointImage || element.pointImage ?'</div>' : '',
+                        element.pointImage && !element.mainPoint ? '<img style="max-width: 290px" alt="" src="{{properties.pointImage}}" /><br/>' : '',
+                    element.pointImage || element.pointImage ?'</div></div>' : '',
                 '</div>']).join(''), {
                 build: function () {
                     BalloonContentLayout.superclass.build.call(this);

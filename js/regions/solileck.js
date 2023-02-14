@@ -1,12 +1,12 @@
 import area from './../areas/solileck.js';
-import {  } from './../points/solileck.js';
+import { solileckPoint } from './../points/solileck.js';
 export const solileckRegion = {
     polygonName: 'Соль-илецкий район',
     area,
     color: area.areaColor,
     areaName: area.areaName,
     mainAreaPoint: '',
-    regionPoint: '',
+    regionPoint: solileckPoint,
     polygon:
     [
     [

@@ -1,5 +1,5 @@
 import area from './../areas/solileck.js';
-import { } from './../points/solileck.js';
+import { akbulakPoint } from './../points/solileck.js';
 
 export const akbulakRegion = {
     polygonName: 'Акбулакский район',
@@ -7,7 +7,7 @@ export const akbulakRegion = {
     color: area.areaColor,
     areaName: area.areaName,
     mainAreaPoint: '',
-    regionPoint: '',
+    regionPoint: akbulakPoint,
     polygon: [
         [
           [

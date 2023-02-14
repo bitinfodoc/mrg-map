@@ -12,7 +12,7 @@ import * as orsk from './orsk.js';
 
 
 export default [ 
-    bugurus.buguruslanPoint, bugurus.asekeevoPoint, bugurus.mordvoDobrinoPoint, bugurus.severnoePoint, 
+    bugurus.buguruslanPoint, bugurus.asekeevoPoint, bugurus.severnoePoint, 
     buzuluk.buzulukPoint, buzuluk.grachevPoint, buzuluk.kurmanPoint, buzuluk.pervomaiPoint, buzuluk.tockiyPoint, buzuluk.buzulukTerminalPoint,
     abdulino.abdulinoPoint, abdulino.ponomarPoint, abdulino.matveevPoint,
     sorochinsk.sorochinskPoint, sorochinsk.tashlaPoint, sorochinsk.pleshanovoPoint, sorochinsk.novosergPoint, sorochinsk.sorochinskTerminalPoint,

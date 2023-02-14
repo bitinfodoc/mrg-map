@@ -33,10 +33,10 @@ export const orenPoint = {
                     '<li>Воскресенье -выходной</li>' +
                 '</ul>'+
                 '<b>Участком также обслуживаются следующие населенные пункты:</b> п.Бердянка, с.Городище, ст.Каргала, п.Краснохолм, п.Ленинский луч, с.Нижнесакмарский, с.Пруды, п.Самородово, п.Холодные ключи'
-                    },
-                    boss: area.boss,
-                    areaName: area.areaName,
-                    pointColor: area.areaColor,
+        },
+        boss: area.boss,
+        areaName: area.areaName,
+        pointColor: area.areaColor,
 }
 
 export const aleksandPoint = {
@@ -53,11 +53,12 @@ export const aleksandPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/aleksandrovka.jpg',
 }
 
 export const sakmaraPoint = {
@@ -74,11 +75,12 @@ export const sakmaraPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/sakmara.jpg',
 }
 
 export const oktyabrPoint = {
@@ -95,11 +97,12 @@ export const oktyabrPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/oktyabrskoe.jpg',
 }
 
 export const ilekPoint = {
@@ -116,11 +119,12 @@ export const ilekPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/ilek.jpg',
 }
 
 export const perevolotskPoint = {
@@ -137,11 +141,12 @@ export const perevolotskPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/perevolockiy.jpg',
 }
 
 export const tulganPoint = {
@@ -158,11 +163,12 @@ export const tulganPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/tulgan.jpg',
 }
 
 export const sharlikPoint = {
@@ -179,9 +185,10 @@ export const sharlikPoint = {
         friday: 'с 8:30 до 16:15',
         saturday: 'Выходной',
         sunday: 'Выходной',
-        other: 'Дополнительно прием осуществляется по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
+        other: '<b>Дополнительно прием осуществляется</b> по субботам с 9.00 до 15.00 по адресу г. Оренбург, ул. Пролетарская 72/1.'
     },
     boss: area.boss,
     areaName: area.areaName,
     pointColor: area.areaColor,
+    pointImage: '/mapimages/sharlik.jpg',
 }
